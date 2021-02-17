@@ -1,6 +1,5 @@
-FROM curlimages/curl:7.75.0
+FROM busybox
 
-RUN mkdir /home/curl_user/plugin-data && \
-    cd /home/curl_user/plugin-data && \
-    curl -O https://github.com/flytreeleft/nexus3-keycloak-plugin/releases/download/v0.4.1/nexus3-keycloak-plugin-0.4.1-bundle.kar && \
-    curl -O https://github.com/flytreeleft/nexus3-keycloak-plugin/releases/download/v0.4.1/nexus3-keycloak-plugin-0.4.1.jar
+RUN mkdir /plugin-data && \
+    cd /plugin-data && \
+    wget https://github.com/flytreeleft/nexus3-keycloak-plugin/releases/download/v0.4.1/nexus3-keycloak-plugin-0.4.1-bundle.kar
